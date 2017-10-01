@@ -43,9 +43,7 @@ var elements = [
 //size: 5, 50, 55, 79
 for(var i=0; i < elements.length; i++){
     console.log(elements[i].name);
-    console.log("size: " + elements[i].size);
-
-    
+    console.log("size: " + elements[i].size);  
 }
 console.log("\n");
 
