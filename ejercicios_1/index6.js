@@ -12,16 +12,18 @@ const beers = [
 function cervezas(){
     for(var i=0; i < beers.length; i++){
       if(beers[i] === null){
-           beers[i].abv.splice(i,0);
+           beers[i].splice(i,0);
 
-         }else{
-
+         }
+        else if(beers[i].abv === undefined){
+            console.log(i+1 + " Nombre: " + beers[i].name + " Graduación: Sin graduación");
+        }else{
             console.log(i+1 + " Nombre: " + beers[i].name + " Graduación: " + beers[i].abv   );
          }
    }
 }
 
-+cervezas();
+cervezas();
 // 2.- Mostrar el nombre y el type de la cerveza cuya graduación sea mayor de 5.4 mediante llamada a función
 
 
