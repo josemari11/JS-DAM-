@@ -16,9 +16,17 @@ const beers = [
 
 //	a) Listar si la graduación es más de 5 y está en stock. Los que no cumplan se guardan en otro array y luego se 
 //	muestra un listado titulado NO CUMPLEN
+
+
 //	b) Listar si estamos sin stock, es de tipo Wheat y tiene más de 6 de graduación, guardar en nuevo array 
+
+
 //	c) Agrupar resultados con una graduación entre 5 y 6 incluidos y guardar en nuevo array
+
+
 //	d) Añadir a todos los elementos un nuevo atributo price y asignarle un valor random (aleatorio) guardar en un nuevo array
+
+
 //	e) Añadir un nuevo atributo id. En base a: 
 //		las 3 primeras letras del nombre 
 //		+ la posición en el array 
