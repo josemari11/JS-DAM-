@@ -24,6 +24,13 @@ function cervezas(){
 }
 
 cervezas();
+
 // 2.- Mostrar el nombre y el type de la cerveza cuya graduación sea mayor de 5.4 mediante llamada a función
-
-
+function cervezas2(){
+    for(var i=0; i < beers.length; i++){
+        if(beers[i].abv > 5.4){
+            console.log(i+1 + " - Nombre: " + beers[i].name + "Tipo: " + beers[i].type );
+        }
+    }
+}
+cervezas2();
