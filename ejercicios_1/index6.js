@@ -9,17 +9,19 @@ const beers = [
 
 //Refactor de código anterior
 // 1.- Mostrar el listado de cervezas (nombre y graduación) mediante llamada a función
-function masCervezas(){
-    for(var i=0; i < beers.lenght; i++){
-        if(beers[i].name == null){
-            beers.name.splice(i,0);
-             console.log(beers[i].name + " Graduación:" + beers[i].abv);
-           }else{
-            console.log(beers[i].name + " Graduación:" + beers[i].abv);
-           }
-    }
+function cervezas(){
+    for(var i=0; i < beers.length; i++){
+      if(beers[i] === null){
+           beers[i].abv.splice(i,0);
+
+         }else{
+
+            console.log(i+1 + " Nombre: " + beers[i].name + " Graduación: " + beers[i].abv   );
+         }
+   }
 }
-masCervezas();
+
++cervezas();
 // 2.- Mostrar el nombre y el type de la cerveza cuya graduación sea mayor de 5.4 mediante llamada a función
 
 
