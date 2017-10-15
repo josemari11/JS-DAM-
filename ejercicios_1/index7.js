@@ -143,7 +143,7 @@ for(var i=0; i < beers.length; i++){
         objetoAuxiliar3.abv = beers[i].abv;
         objetoAuxiliar3.type = beers[i].type;
         objetoAuxiliar3.stock = beers[i].stock;
-        objetoAuxiliar3.price = Math.floor((Math.random() * 1000) + 1);
+        objetoAuxiliar3.price = Math.floor((Math.random() * 999) + 100);
         
         //Almacenamos en el nuevo array
         arrayAuxiliar3.push(objetoAuxiliar3);
@@ -162,7 +162,7 @@ console.log(arrayAuxiliar3);
 //		Vamos modificando el array original 
 var arrayAuxiliar4 = [];
 for(var i=0; i < beers.length; i++){
-        var numAle=Math.floor((Math.random() * 1000) + 1);
+        var numAle=Math.floor((Math.random() * 999) + 100);
         var objetoAuxiliar4 = {};
         objetoAuxiliar4.name = beers[i].name;
         objetoAuxiliar4.abv = beers[i].abv;
