@@ -81,11 +81,11 @@ var contador = 0;
 for (var i = 0; i < beers.length; i++) {
     if (beers[i].abv > 5 && beers[i].stock === true) {
         console.log(beers[i].name)
-        if(beers[i].stock === true){
-          beers[i].stock= "si";
-           }
-        console.log(" Graduación: "+beers[i].abv)
-        console.log(" En stock--> "+beers[i].stock)
+        if (beers[i].stock === true) {
+            beers[i].stock = "si";
+        }
+        console.log(" Graduación: " + beers[i].abv)
+        console.log(" En stock--> " + beers[i].stock)
     } else {
         contador++;
         //Creamos el nuevo objeto
@@ -99,20 +99,20 @@ for (var i = 0; i < beers.length; i++) {
     }
 
 }
-if(contador !=0){
-   console.log("\n No cumplen");
-   }
+if (contador != 0) {
+    console.log("\n No cumplen");
+}
 console.log(auxArray);
 
 
 
 //	b) Listar si estamos sin stock, es de tipo Wheat y tiene más de 6 de graduación, guardar en nuevo array 
 var arrayAuxiliar = [];
-for(var i=0; i < beers.length; i++){
-    if (beers[i].stock === false && beers[i].type == "Wheat" && beers[i].abv > 6){
+for (var i = 0; i < beers.length; i++) {
+    if (beers[i].stock === false && beers[i].type == "Wheat" && beers[i].abv > 6) {
         var objetoAuxiliar = {};
         objetoAuxiliar.name = beers[i].name;
-        
+
         //Almacenamos en el nuevo array
         arrayAuxiliar.push(objetoAuxiliar);
     }
@@ -122,12 +122,12 @@ console.log(arrayAuxiliar);
 
 //	c) Agrupar resultados con una graduación entre 5 y 6 incluidos y guardar en nuevo array
 var arrayAuxiliar2 = [];
-for(var i=0; i < beers.length; i++){
-    if (beers[i].abv>=5 && beers[i].abv <= 6){
+for (var i = 0; i < beers.length; i++) {
+    if (beers[i].abv >= 5 && beers[i].abv <= 6) {
         var objetoAuxiliar2 = {};
         objetoAuxiliar2.name = beers[i].name;
         objetoAuxiliar2.abv = beers[i].abv;
-        
+
         //Almacenamos en el nuevo array
         arrayAuxiliar2.push(objetoAuxiliar2);
     }
@@ -137,17 +137,17 @@ console.log(arrayAuxiliar2);
 
 //	d) Añadir a todos los elementos un nuevo atributo price y asignarle un valor random (aleatorio) guardar en un nuevo array
 var arrayAuxiliar3 = [];
-for(var i=0; i < beers.length; i++){
-        var objetoAuxiliar3 = {};
-        objetoAuxiliar3.name = beers[i].name;
-        objetoAuxiliar3.abv = beers[i].abv;
-        objetoAuxiliar3.type = beers[i].type;
-        objetoAuxiliar3.stock = beers[i].stock;
-        objetoAuxiliar3.price = Math.floor((Math.random() * 999) + 100);
-        
-        //Almacenamos en el nuevo array
-        arrayAuxiliar3.push(objetoAuxiliar3);
-    }
+for (var i = 0; i < beers.length; i++) {
+    var objetoAuxiliar3 = {};
+    objetoAuxiliar3.name = beers[i].name;
+    objetoAuxiliar3.abv = beers[i].abv;
+    objetoAuxiliar3.type = beers[i].type;
+    objetoAuxiliar3.stock = beers[i].stock;
+    objetoAuxiliar3.price = Math.floor((Math.random() * 999) + 100);
+
+    //Almacenamos en el nuevo array
+    arrayAuxiliar3.push(objetoAuxiliar3);
+}
 
 console.log("\n Añadir a todos los elementos un nuevo atributo price \n");
 console.log(arrayAuxiliar3);
@@ -160,22 +160,37 @@ console.log(arrayAuxiliar3);
 //		+ type
 // 		Por ejemplo el primer elemento debe quedar algo parecido a esto: Pur1376-IPA
 //		Vamos modificando el array original 
-var arrayAuxiliar4 = [];
-for(var i=0; i < beers.length; i++){
-        var numAle=Math.floor((Math.random() * 999) + 100);
-        var objetoAuxiliar4 = {};
-        objetoAuxiliar4.name = beers[i].name;
-        objetoAuxiliar4.abv = beers[i].abv;
-        objetoAuxiliar4.type = beers[i].type;
-        objetoAuxiliar4.stock = beers[i].stock;
-        objetoAuxiliar4.id = beers[i].name.substr(0,3) + i + numAle + "-" +
-            beers[i].type;
-       
-        
-        //Almacenamos en el nuevo array
-        arrayAuxiliar4.push(objetoAuxiliar4);
-    }
-
 console.log("\n Añadir un nuevo atributo id. \n");
-console.log(arrayAuxiliar4);
+
+var arrayAuxiliar4 = [];
+for (var i = 0; i < beers.length; i++) {
+    if (beers[i].stock === true || beers[i].stock == "si") {
+            beers[i].stock = "si";
+        }else{
+            beers[i].stock = "Sin stock";
+        }
+    
+    var numAle = Math.floor((Math.random() * 999) + 100);
+    var objetoAuxiliar4 = {};
+    objetoAuxiliar4.name = beers[i].name;
+    objetoAuxiliar4.abv = beers[i].abv;
+    objetoAuxiliar4.type = beers[i].type;
+    objetoAuxiliar4.stock = beers[i].stock;
+    objetoAuxiliar4.id = beers[i].name.substr(0, 3) + i + numAle + "-" +
+        beers[i].type;
+
+
+    //Almacenamos en el nuevo array
+    arrayAuxiliar4.push(objetoAuxiliar4);
+    //Mostramos el array
+    console.log(i+1 + ".");
+    console.log("Producto: " + objetoAuxiliar4.name);
+    console.log("Graducación: " + objetoAuxiliar4.abv);
+    console.log("Tipo: " + objetoAuxiliar4.type);
+    console.log("Stock: " + objetoAuxiliar4.stock);
+    console.log("ID: " + objetoAuxiliar4.id);
+
+    console.log("......................");
+}
+//console.log(arrayAuxiliar4);
 // 		Finalmente mostramos un listado bonito por consola de todos los productos.
